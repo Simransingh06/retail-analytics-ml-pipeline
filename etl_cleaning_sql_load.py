@@ -65,3 +65,4 @@ df_clean.to_sql("retail_data", conn, index=False, if_exists="replace")
 conn.close()
 
 print("ETL pipeline completed successfully!")
+# Optimized SQL connection
