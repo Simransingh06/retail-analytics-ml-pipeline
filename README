@@ -1,0 +1,228 @@
+# End-to-End Retail Data Analytics Pipeline with Machine Learning
+
+An end-to-end data analytics project that processes raw retail transaction data, performs business analytics using SQL, and builds a machine learning model to forecast sales revenue.
+
+This project demonstrates the **complete lifecycle of a modern analytics pipeline**, including data engineering, analytics, visualization, and predictive modeling.
+
+---
+
+# Project Overview
+
+Retail businesses generate massive volumes of transaction data. However, extracting actionable insights from raw data requires proper data pipelines, analytics queries, and predictive modeling.
+
+This project builds a **complete analytics workflow** that:
+
+• Cleans and transforms raw retail transaction data
+• Stores structured data in a relational database
+• Generates business insights using SQL analytics
+• Predicts future revenue using a machine learning model
+• Produces datasets for BI dashboards
+
+The pipeline demonstrates how **data flows from raw dataset → analytics insights → predictive intelligence**.
+
+---
+
+# Analytics Pipeline Architecture
+
+Raw Excel Dataset
+↓
+Python ETL Pipeline (Data Cleaning & Feature Engineering)
+↓
+SQLite Database
+↓
+SQL Analytics Queries
+↓
+Business Insight Datasets
+↓
+Machine Learning Sales Prediction
+↓
+Visualization & BI Dashboard Integration
+
+---
+
+# Dataset
+
+Dataset used: **Online Retail II Dataset**
+
+The dataset contains transactional records from a UK-based online retailer between **2009 and 2011**.
+
+Key attributes include:
+
+• Invoice ID
+• Product description
+• Quantity purchased
+• Unit price
+• Customer ID
+• Transaction date
+• Country
+
+Dataset Source:
+UCI Machine Learning Repository – Online Retail Dataset
+
+---
+
+# Tech Stack
+
+Python
+Pandas
+SQLite
+Scikit-Learn
+Matplotlib
+SQL
+Power BI
+
+---
+
+# Project Structure
+
+```
+ai-retail-analytics-pipeline
+
+data/
+    sales_summary.csv
+    top_products.csv
+    customer_activity.csv
+    returns_summary.csv
+    monthly_sales.csv
+
+images/
+    revenue_prediction_plot.png
+
+etl_cleaning_sql_load.py
+sql_analysis_export.py
+sales_prediction_model.py
+
+README.md
+.gitignore
+```
+
+---
+
+# ETL Pipeline
+
+File: `etl_cleaning_sql_load.py`
+
+The ETL pipeline processes the raw retail dataset and prepares it for analytics.
+
+Steps performed:
+
+• Load Excel dataset containing two years of transactions
+• Merge multiple sheets into a single dataset
+• Remove missing values and duplicates
+• Perform feature engineering on timestamps
+• Generate time-based features such as year, month, week, and quarter
+• Store the cleaned dataset in a SQLite database
+
+Output:
+
+`online_retail_clean.db`
+
+---
+
+# SQL Analytics
+
+File: `sql_analysis_export.py`
+
+SQL queries are used to generate business intelligence datasets.
+
+Analytics performed:
+
+• Sales summary across transactions
+• Top selling products by quantity and revenue
+• Customer spending behavior analysis
+• Product return analysis
+• Monthly revenue trends
+
+Generated datasets:
+
+```
+data/sales_summary.csv
+data/top_products.csv
+data/customer_activity.csv
+data/returns_summary.csv
+data/monthly_sales.csv
+```
+
+These datasets can be directly used in **Power BI dashboards**.
+
+---
+
+# Machine Learning Sales Prediction
+
+File: `sales_prediction_model.py`
+
+A machine learning model is used to forecast revenue trends based on historical sales data.
+
+Model used:
+
+Linear Regression
+
+Pipeline steps:
+
+• Extract monthly revenue data from SQLite database
+• Split dataset into training and testing sets
+• Train regression model
+• Evaluate model performance
+• Generate prediction visualization
+
+Model metrics:
+
+• Mean Squared Error (MSE)
+• R² Score
+
+Saved model:
+
+`sales_prediction_model.pkl`
+
+---
+
+# Revenue Prediction Visualization
+
+This visualization compares actual sales revenue with predicted values from the machine learning model.
+
+![Revenue Prediction](images/revenue_prediction_plot.png)
+
+---
+
+# Key Insights Generated
+
+The analytics pipeline enables identification of:
+
+• High-value customers
+• Most profitable products
+• Monthly revenue trends
+• Product return patterns
+• Customer purchase behavior
+
+These insights can support **business decision making and revenue optimization**.
+
+---
+
+# Skills Demonstrated
+
+Data Cleaning and Transformation
+ETL Pipeline Development
+SQL Analytics and Data Modeling
+Business Intelligence Dataset Creation
+Machine Learning Forecasting
+Data Visualization
+End-to-End Analytics Workflow
+
+---
+
+# Future Improvements
+
+Potential enhancements for this project include:
+
+• Implement advanced forecasting models such as ARIMA or Prophet
+• Deploy an interactive dashboard using Streamlit
+• Build automated data ingestion pipelines
+• Add real-time analytics capabilities
+
+---
+
+# Author
+
+Kavyashree Saikia
+Integrated M.Tech – Software Engineering
+VIT Vellore
